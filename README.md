@@ -1,7 +1,14 @@
-# Beautify_Document_Addin
+# Beautify_Document_Addin(Personal Practice)
 
 ## Install    
-- Todo
+1. Close all excel files    
+2. Double click easy-install.vbs    
+
+## Register to ribbon list(TODO: automation)     
+1. Open Excel
+2. click [Option]>[Custom Ribbon]
+3. Create a new group
+4. Add macro module called "formatDocuments" into the new ribbon group.  
 
 ## Contents    
 A simple VBA script which can do these tasks for you:    
