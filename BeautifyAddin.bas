@@ -12,9 +12,19 @@ Option Explicit
     Dim sw As Boolean
     Dim WB As Workbook
 
+    Dim isDefualt As Boolean
+
 Sub formatDocuments()
 
     On Error GoTo e
+
+    ' TODO: set is defualt to false if defualt option is unchecked.
+    ' IF useDefault is unchecked Then
+    ' isDefualt = False
+    ' ELSE
+    isDefualt = True
+    ' End If
+
 
     If ActiveWorkbook Is Nothing Then
         MsgBox "No active workbooks!"
@@ -34,6 +44,7 @@ Sub formatDocuments()
   
     For Each WS In WB.Worksheets
         If WS.visible = xlSheetVisible Then
+            If isDefualt Then
             WS.Activate
             WS.Range("A1").Select
             WB.Windows(1).ScrollRow = 1
@@ -45,6 +56,9 @@ Sub formatDocuments()
             WS.PageSetup.Zoom = False
             WS.PageSetup.FitToPagesWide = 1
             WS.PageSetup.FitToPagesTall = False
+            ELSE
+                ' TODO: grab customised information from form.
+            End If
         End If
     Next
 
